@@ -6,6 +6,9 @@ public class Interactable : MonoBehaviour
 {
     [SerializeField]
     bool Holdable, LongInteraction;
+    [SerializeField]
+    int InteractionCode;
+    public int intercationCode { get { return InteractionCode; } }
     public bool holdable { get { return Holdable; } }
     public bool longInteraction { get { return LongInteraction; } }
 
@@ -37,6 +40,16 @@ public class Interactable : MonoBehaviour
         print("interacted");
 
     }
+    public virtual void ItemInteraction(Interactable heldItem)
+    {
+        if(InteractionCode!=0 && heldItem.intercationCode == intercationCode)
+        {
+            print("interacted");
+        }
+        
+       
+
+    }
     public virtual void HeldInteraction()
     {
         print("interacted");
@@ -60,4 +73,6 @@ public class Interactable : MonoBehaviour
         this.transform.rotation = originalRotation;
         this.GetComponent<Collider>().enabled = true;
     }
+
+    
 }

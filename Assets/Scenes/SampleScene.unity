@@ -1124,6 +1124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Holdable: 1
   LongInteraction: 0
+  InteractionCode: 0
   clips:
   - {fileID: 8300000, guid: 8032aafc08a13ff4b8ecd99dc9a63c73, type: 3}
   - {fileID: 8300000, guid: 7e6a3e0b749e92944b482cb4cddabce5, type: 3}
@@ -1495,8 +1496,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6c434c7b2bc152459abd25fe408dbc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Holdable: 1
+  Holdable: 0
   LongInteraction: 0
+  InteractionCode: 5
   clips: []
 --- !u!65 &1828672564
 BoxCollider:
@@ -1830,6 +1832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Holdable: 0
   LongInteraction: 1
+  InteractionCode: 0
   interactionLength: 5
 --- !u!1 &2100138688
 GameObject:
@@ -1944,6 +1947,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Holdable: 1
   LongInteraction: 0
+  InteractionCode: 5
 --- !u!1001 &2301713705839087914
 PrefabInstance:
   m_ObjectHideFlags: 0
