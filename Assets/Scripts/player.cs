@@ -125,6 +125,10 @@ public class player : MonoBehaviour
             {
                 grabbedItem.Interaction();
             }
+            else if (Input.GetMouseButton(0))
+            {
+                grabbedItem.HeldInteraction();
+            }
         }
         //drops/returns the object
        
