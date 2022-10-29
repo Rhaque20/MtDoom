@@ -55,7 +55,7 @@ public class player : MonoBehaviour
         RaycastHit hit;
         Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
 
-        if (Physics.Raycast(ray, out hit, 1, layerMask))
+        if (Physics.Raycast(ray, out hit, interactionDistance, layerMask))
         {
             Interactable interactable = hit.collider.gameObject.GetComponent<Interactable>();
             
