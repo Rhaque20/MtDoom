@@ -49,6 +49,12 @@ public class GameManager : MonoBehaviour
         string seconds = (timer % 60).ToString("00");
         timerText.text = minutes + ":" + seconds;
 
+        if (timer <= 0)
+        {
+            print("game should end");
+        }
+
+
     }
 
 

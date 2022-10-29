@@ -8,5 +8,7 @@ public class Flute : Interactable
     {
         base.interaction();
         GameManager.Instance.Flute();
-    } 
+    }
+
+    
 }

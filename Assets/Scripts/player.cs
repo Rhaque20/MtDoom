@@ -13,6 +13,9 @@ public class player : MonoBehaviour
     LayerMask layerMask;
     [SerializeField]
     Image crosshair;
+    [SerializeField]
+    Transform grabPos;
+    Interactable grabbedItem;
     private void Awake()
     {
         cam = Camera.main;
@@ -64,8 +67,16 @@ public class player : MonoBehaviour
                 crosshair.color = Color.green;
                 if (Input.GetMouseButtonDown(0))
                 {
-
-                    hit.collider.gameObject.GetComponent<Interactable>().interaction();
+                    if (interactable.holdable)
+                    {
+                        interactable.grab(grabPos);
+                        grabbedItem = interactable;
+                    }
+                    else
+                    {
+                        interactable.interaction();
+                    }
+                    
                 }
 
                 
@@ -82,7 +93,11 @@ public class player : MonoBehaviour
             crosshair.color = Color.white;
         }
         
-       
+       if(Input.GetMouseButtonDown(1)&& grabbedItem != null)
+        {
+            grabbedItem.returnObject();
+            grabbedItem = null;
+        }
 
     }
 }
