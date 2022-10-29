@@ -19,6 +19,7 @@ public class Interactable : MonoBehaviour
 
      public virtual void interaction()
     {
+        print("interacted");
 
     }
 }
