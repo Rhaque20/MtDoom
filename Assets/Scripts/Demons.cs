@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Demons : MonoBehaviour
 {
+    int demon = 0;//
+    [SerializeField]float graceTimer = 10f;
+    enum Difficulty{Easy,Normal,Hard};
+    Difficulty d = Difficulty.Easy;
     // Start is called before the first frame update
     void Start()
     {
