@@ -77,17 +77,24 @@ public class player : MonoBehaviour
                             grabbedItem = null;
                         }
                         interactable.grab(grabPos);
+
                         grabbedItem = interactable;
                     }
                     else
                     {
-                        interactable.interaction();
+                        
+                        interactable.Interaction();
+
                     }
                     
+                }else
+                if (Input.GetKey(KeyCode.E)&& interactable.longInteraction)
+                {
+                    interactable.HeldInteraction();
                 }
 
-                
-                
+
+
             }
             else
             {
@@ -109,7 +116,7 @@ public class player : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                grabbedItem.interaction();
+                grabbedItem.Interaction();
             }
         }
         //drops/returns the object

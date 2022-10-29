@@ -10,9 +10,9 @@ public class Bell : Interactable
         audio = this.GetComponent<AudioSource>();        
     }
 
-    public override void interaction()
+    public override void Interaction()
     {
-        base.interaction();
+        base.Interaction();
         print("bell is working");
         audio.Play();
     }

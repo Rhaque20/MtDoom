@@ -5,8 +5,11 @@ using UnityEngine;
 public class Interactable : MonoBehaviour
 {
     [SerializeField]
-    bool Holdable;
+    bool Holdable, LongInteraction;
     public bool holdable { get { return Holdable; } }
+    public bool longInteraction { get { return LongInteraction; } }
+
+    
 
     Vector3 originalPosition;
     Quaternion originalRotation;
@@ -29,7 +32,12 @@ public class Interactable : MonoBehaviour
     }
 
     //interactions
-     public virtual void interaction()
+     public virtual void Interaction()
+    {
+        print("interacted");
+
+    }
+    public virtual void HeldInteraction()
     {
         print("interacted");
 

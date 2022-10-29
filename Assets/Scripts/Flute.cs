@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Flute : Interactable
 {
-   public override void interaction()
+   public override void Interaction()
     {
-        base.interaction();
+        base.Interaction();
         GameManager.Instance.Flute();
     }
     public override void grab(Transform holdPos)
