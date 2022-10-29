@@ -18,10 +18,10 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     float reactionTime;
     float fluteCounter,bellCounter;
-    int ritualProgress;
-    float demonDistance;
+    int ritualProgress;// Current bar progress
+    float demonDistance;// Time until demon arrives to kill player
     [SerializeField]
-    float timer=360;
+    float timer=360;// Time until day ends
     [SerializeField]
     TextMeshProUGUI timerText;
 
