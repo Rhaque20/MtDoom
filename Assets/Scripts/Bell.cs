@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class Bell : Interactable
 {
-    AudioSource audio;
+    AudioSource audioSource;
+
+    
     private void Awake()
     {
-        audio = this.GetComponent<AudioSource>();        
+        audioSource = this.GetComponent<AudioSource>();        
     }
 
     public override void Interaction()
     {
         base.Interaction();
         print("bell is working");
-        audio.Play();
+        audioSource.Play();
     }
 }
