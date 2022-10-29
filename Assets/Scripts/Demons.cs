@@ -7,10 +7,11 @@ public class Demons : MonoBehaviour
     int demon = 0;
     public enum Difficulty{Easy,Normal,Hard};
     Difficulty d = Difficulty.Easy;
+    float difficultymod = 1.0f;
 
-    public Difficulty difficulty
+    public float dmod
     {
-        get{return d;}
+        get{return difficultymod;}
     }// Return current difficulty
 
     public int CallDemon()// Return randomly called demon
@@ -25,9 +26,11 @@ public class Demons : MonoBehaviour
         {
             case Difficulty.Easy:
                 d = Difficulty.Normal;
+                difficultymod = 0.75f;
                 break;
             default:
                 d = Difficulty.Hard;
+                difficultymod = 0.5f;
                 break;
         }
     }
