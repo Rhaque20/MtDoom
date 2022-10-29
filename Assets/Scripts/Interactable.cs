@@ -28,12 +28,13 @@ public class Interactable : MonoBehaviour
         
     }
 
-
+    //interactions
      public virtual void interaction()
     {
         print("interacted");
 
     }
+    //this allows you to grab the item
     public virtual void grab(Transform holdPos)
     {
         this.transform.position = holdPos.position;
@@ -43,6 +44,7 @@ public class Interactable : MonoBehaviour
         print("interacted");
 
     }
+    //this returns the object to its start position and reeanables colliders
     public virtual void returnObject()
     {
         this.transform.SetParent(null);

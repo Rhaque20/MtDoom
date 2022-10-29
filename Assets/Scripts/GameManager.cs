@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //timer system
         timer -= Time.deltaTime;
         print(timer);
         string minutes = Mathf.Floor(timer / 60).ToString("00");

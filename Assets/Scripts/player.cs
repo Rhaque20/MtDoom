@@ -34,12 +34,13 @@ public class player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //movement system
         Vector3 moveVector = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
         moveVector = this.transform.TransformDirection(moveVector);
         controller.SimpleMove(moveVector*speed);
+
+        //camera system
         this.transform.Rotate(this.transform.up * Input.GetAxis("Mouse X"));
-
-
         cam.transform.Rotate(-Input.GetAxis("Mouse Y"), 0, 0);
         var angle = cam.transform.localEulerAngles;
         angle.z = 0;
@@ -67,6 +68,7 @@ public class player : MonoBehaviour
                 crosshair.color = Color.green;
                 if (Input.GetMouseButtonDown(0))
                 {
+                    //if item is holdable do the grab Interactions
                     if (interactable.holdable)
                     {
                         interactable.grab(grabPos);
@@ -92,7 +94,7 @@ public class player : MonoBehaviour
         {
             crosshair.color = Color.white;
         }
-        
+        //drops/returns the object
        if(Input.GetMouseButtonDown(1)&& grabbedItem != null)
         {
             grabbedItem.returnObject();
