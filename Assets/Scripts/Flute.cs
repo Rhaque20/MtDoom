@@ -9,6 +9,11 @@ public class Flute : Interactable
         base.interaction();
         GameManager.Instance.Flute();
     }
+    public override void grab(Transform holdPos)
+    {
+        base.grab(holdPos);
+        this.transform.Rotate(new Vector3(-35f, 0, 0));
+    }
 
-    
+
 }
