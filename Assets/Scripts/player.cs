@@ -82,8 +82,15 @@ public class player : MonoBehaviour
                     }
                     else
                     {
+                        if(grabbedItem!=null && grabbedItem.intercationCode != 0)
+                        {
+                            interactable.ItemInteraction(grabbedItem);
+                        }
+                        else
+                        {
+                            interactable.Interaction();
+                        }
                         
-                        interactable.Interaction();
 
                     }
                     
