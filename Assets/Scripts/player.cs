@@ -16,6 +16,11 @@ public class player : MonoBehaviour
     [SerializeField]
     Transform grabPos;
     Interactable grabbedItem;
+
+    public Interactable item
+    {
+        get{return grabbedItem;}
+    }
     private void Awake()
     {
         cam = Camera.main;
@@ -82,7 +87,7 @@ public class player : MonoBehaviour
                     }
                     else
                     {
-                        if(grabbedItem!=null && grabbedItem.intercationCode != 0)
+                        if(grabbedItem!=null && grabbedItem.interactionCode != 0)
                         {
                             interactable.ItemInteraction(grabbedItem);
                         }

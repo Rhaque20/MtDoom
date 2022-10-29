@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     TextMeshProUGUI timerText;
     Coroutine demonDistance;
     [SerializeField]Demons d;
+    [SerializeField]GameObject [] demonSignals;
 
 
     private IEnumerator Timers(int stage,float countdown)// Will run a two stage timer
@@ -42,6 +43,7 @@ public class GameManager : MonoBehaviour
                     run if/switch statement of triggering an object event
                 **/
                 // Start the reaction timer, will use timer modifier from from demon script
+                print("A strong demonic energy is approaching!");
                 onAttack = true;
                 demonDistance = StartCoroutine(Timers(1,10f * d.dmod));
                 break;
@@ -55,10 +57,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void CounterEvent(int item)
+    public void CounterEvent()
     {
-        if (item == d.activeDemon && onAttack)// If an attack event is in progress cancel it
+        if (onAttack)// If an attack event is in progress cancel it
         {
+            print("The demon has disappeared....for now...");
             StopCoroutine(demonDistance);
             demonDistance = null;
             onAttack = false;

@@ -8,7 +8,7 @@ public class Interactable : MonoBehaviour
     bool Holdable, LongInteraction;
     [SerializeField]
     int InteractionCode;
-    public int intercationCode { get { return InteractionCode; } }
+    public int interactionCode { get { return InteractionCode; } }
     public bool holdable { get { return Holdable; } }
     public bool longInteraction { get { return LongInteraction; } }
 
@@ -42,7 +42,7 @@ public class Interactable : MonoBehaviour
     }
     public virtual void ItemInteraction(Interactable heldItem)
     {
-        if(InteractionCode!=0 && heldItem.intercationCode == intercationCode)
+        if(InteractionCode!=0 && heldItem.interactionCode == interactionCode)
         {
             print("interacted");
         }
