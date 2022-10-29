@@ -87,6 +87,7 @@ public class player : MonoBehaviour
                 }
 
                 
+                
             }
             else
             {
@@ -102,6 +103,13 @@ public class player : MonoBehaviour
             {
                 grabbedItem.returnObject();
                 grabbedItem = null;
+            }
+        }
+        if (grabbedItem != null)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                grabbedItem.interaction();
             }
         }
         //drops/returns the object

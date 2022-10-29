@@ -8,8 +8,6 @@ public class GameManager : MonoBehaviour
     //struct sector
     //{
     //    public bool hasYokai;
-
-
     //}
 
 
