@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI timerText;
     Coroutine demonDistance;
-    Demons d;
+    [SerializeField]Demons d;
 
 
     private IEnumerator Timers(int stage,float countdown)// Will run a two stage timer
