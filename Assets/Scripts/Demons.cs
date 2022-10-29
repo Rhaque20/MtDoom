@@ -5,7 +5,7 @@ using UnityEngine;
 public class Demons : MonoBehaviour
 {
     int demon = 0;
-    enum Difficulty{Easy,Normal,Hard};
+    public enum Difficulty{Easy,Normal,Hard};
     Difficulty d = Difficulty.Easy;
 
     public Difficulty difficulty
