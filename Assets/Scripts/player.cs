@@ -66,11 +66,16 @@ public class player : MonoBehaviour
             if (interactable != null)
             {
                 crosshair.color = Color.green;
-                if (Input.GetMouseButtonDown(0))
+                if (Input.GetKeyDown(KeyCode.E))
                 {
                     //if item is holdable do the grab Interactions
                     if (interactable.holdable)
                     {
+                        if(grabbedItem != null)
+                        {
+                            grabbedItem.returnObject();
+                            grabbedItem = null;
+                        }
                         interactable.grab(grabPos);
                         grabbedItem = interactable;
                     }
@@ -93,13 +98,14 @@ public class player : MonoBehaviour
         else
         {
             crosshair.color = Color.white;
+            if (Input.GetKeyDown(KeyCode.E) && grabbedItem != null)
+            {
+                grabbedItem.returnObject();
+                grabbedItem = null;
+            }
         }
         //drops/returns the object
-       if(Input.GetMouseButtonDown(1)&& grabbedItem != null)
-        {
-            grabbedItem.returnObject();
-            grabbedItem = null;
-        }
+       
 
     }
 }

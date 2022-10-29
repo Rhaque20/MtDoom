@@ -13,9 +13,15 @@ public class GameManager : MonoBehaviour
     //}
 
 
-    public static GameManager Instance;
 
+    public static GameManager Instance;
+    [SerializeField]
+    int ritualGoal;
+    [SerializeField]
+    float reactionTime;
+    float fluteCounter,bellCounter;
     int ritualProgress;
+    float demonDistance;
     [SerializeField]
     float timer=360;
     [SerializeField]
@@ -54,10 +60,17 @@ public class GameManager : MonoBehaviour
         {
             print("game should end");
         }
-
+        if (fluteCounter > 0)
+        {
+            fluteCounter -= Time.deltaTime;
+        }
 
     }
 
+    void demonEvent()
+    {
+        fluteCounter = reactionTime;
+    }
 
     public void Flute()
     {
