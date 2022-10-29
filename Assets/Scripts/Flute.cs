@@ -6,6 +6,6 @@ public class Flute : Interactable
 {
    public override void interaction()
     {
-        print("Flute action");
+        GameManager.Instance.Flute();
     } 
 }
