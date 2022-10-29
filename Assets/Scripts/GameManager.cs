@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
     {
         //timer system
         timer -= Time.deltaTime;
-        print(timer);
+       // print(timer);
         string minutes = Mathf.Floor(timer / 60).ToString("00");
         string seconds = (timer % 60).ToString("00");
         timerText.text = minutes + ":" + seconds;
