@@ -844,6 +844,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   crosshair: {fileID: 1066519636}
+  grabPos: {fileID: 1349367076}
 --- !u!4 &953932904
 Transform:
   m_ObjectHideFlags: 0
@@ -1540,6 +1541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6c434c7b2bc152459abd25fe408dbc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Holdable: 1
 --- !u!65 &1960742271
 BoxCollider:
   m_ObjectHideFlags: 0
