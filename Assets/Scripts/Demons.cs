@@ -14,6 +14,11 @@ public class Demons : MonoBehaviour
         get{return difficultymod;}
     }// Return current difficulty
 
+    public int activeDemon
+    {
+        get{return demon;}
+    }
+
     public int CallDemon()// Return randomly called demon
     {
         demon = Random.Range(1,3);

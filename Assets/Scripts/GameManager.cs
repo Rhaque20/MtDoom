@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     //}
 
 
-
+    bool onAttack = false;
     public static GameManager Instance;
     [SerializeField]
     int ritualGoal;
@@ -42,14 +42,26 @@ public class GameManager : MonoBehaviour
                     run if/switch statement of triggering an object event
                 **/
                 // Start the reaction timer, will use timer modifier from from demon script
+                onAttack = true;
                 demonDistance = StartCoroutine(Timers(1,10f * d.dmod));
                 break;
             case 1:
                 // Trigger gameover here
                 print("GAME OVER!");
                 demonDistance = null;
+                onAttack = false;
                 break;
 
+        }
+    }
+
+    public void CounterEvent(int item)
+    {
+        if (item == d.activeDemon && onAttack)// If an attack event is in progress cancel it
+        {
+            StopCoroutine(demonDistance);
+            demonDistance = null;
+            onAttack = false;
         }
     }
 
