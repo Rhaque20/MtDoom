@@ -73,6 +73,7 @@ public class GameManager : MonoBehaviour
                 demon = -1;
                 JumpScare();
                 demonDistance = null;
+                p.enabled = false;
                 //demonJumpscare.transform.rotation = new Quaternion(demonJumpscare.transform.rotation.x, targetRotation.y, demonJumpscare.transform.rotation.z, demonJumpscare.transform.rotation.w);
                 break;
 

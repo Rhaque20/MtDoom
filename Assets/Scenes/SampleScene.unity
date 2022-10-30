@@ -2157,7 +2157,7 @@ MonoBehaviour:
   victory: 0
   ritualGoal: 0
   reactionTime: 0
-  timer: 180
+  timer: 300
   timerText: {fileID: 1704500117}
   d: {fileID: 1160875245}
   demonSignals:
