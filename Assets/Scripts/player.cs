@@ -16,7 +16,11 @@ public class player : MonoBehaviour
     [SerializeField]
     Transform grabPos;
     Interactable grabbedItem;
-
+    public AudioSource audiosource;
+    public AudioClip footsteps;
+    public AudioClip pickupSound;
+    public AudioClip placeSound;
+    bool isWalking = false;
     public Interactable item
     {
         get{return grabbedItem;}
@@ -43,6 +47,60 @@ public class player : MonoBehaviour
         Vector3 moveVector = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
         moveVector = this.transform.TransformDirection(moveVector);
         controller.SimpleMove(moveVector*speed);
+
+        // footstep sounds
+        if (Input.GetKey(KeyCode.W) && isWalking == false)
+        {
+            audiosource.clip = footsteps;
+            audiosource.loop = true;
+            audiosource.Play();
+            isWalking = true;
+        }
+        if (Input.GetKeyUp(KeyCode.W) && isWalking == true)
+        {
+            audiosource.Stop();
+            audiosource.loop = false;
+            isWalking = false;
+        }
+        if (Input.GetKey(KeyCode.S) && isWalking == false)
+        {
+            audiosource.clip = footsteps;
+            audiosource.loop = true;
+            audiosource.Play();
+            isWalking = true;
+        }
+        if (Input.GetKeyUp(KeyCode.S) && isWalking == true)
+        {
+            audiosource.Stop();
+            audiosource.loop = false;
+            isWalking = false;
+        }
+        if (Input.GetKey(KeyCode.A) && isWalking == false)
+        {
+            audiosource.clip = footsteps;
+            audiosource.loop = true;
+            audiosource.Play();
+            isWalking = true;
+        }
+        if (Input.GetKeyUp(KeyCode.A) && isWalking == true)
+        {
+            audiosource.Stop();
+            audiosource.loop = false;
+            isWalking = false;
+        }
+        if (Input.GetKey(KeyCode.D) && isWalking == false)
+        {
+            audiosource.clip = footsteps;
+            audiosource.loop = true;
+            audiosource.Play();
+            isWalking = true;
+        }
+        if (Input.GetKeyUp(KeyCode.D) && isWalking == true)
+        {
+            audiosource.Stop();
+            audiosource.loop = false;
+            isWalking = false;
+        }
 
         //camera system
         this.transform.Rotate(this.transform.up * Input.GetAxis("Mouse X"));
@@ -76,8 +134,12 @@ public class player : MonoBehaviour
                     //if item is holdable do the grab Interactions
                     if (interactable.holdable)
                     {
+                        audiosource.clip = pickupSound;
+                        audiosource.Play();
                         if(grabbedItem != null)
                         {
+                            audiosource.clip = placeSound;
+                            audiosource.Play();
                             grabbedItem.returnObject();
                             grabbedItem = null;
                         }
@@ -120,6 +182,8 @@ public class player : MonoBehaviour
             crosshair.color = Color.white;
             if (Input.GetKeyDown(KeyCode.E) && grabbedItem != null)
             {
+                audiosource.clip = placeSound;
+                audiosource.Play();
                 grabbedItem.returnObject();
                 grabbedItem = null;
             }
