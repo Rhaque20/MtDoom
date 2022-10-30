@@ -16,12 +16,19 @@ public class Flute : Interactable
     {
         base.Interaction();
         GameManager.Instance.Flute();
-        
-        audioSource.PlayOneShot(clips[(int)Random.Range(0,clips.Length)]);
+       // audioSource.time = 0;
+       // audioSource.Stop();
+        audioSource.clip = clips[(int)Random.Range(0, clips.Length)];
+        audioSource.Play();
     }
     public override void releasedInteraction()
     {
         base.releasedInteraction();
+        //if (audioSource.time < audioSource.clip.length * .5f)
+        //{
+        //    audioSource.time = audioSource.clip.length * .5f;
+        //}
+        
         audioSource.Stop();
     }
     public override void grab(Transform holdPos)
