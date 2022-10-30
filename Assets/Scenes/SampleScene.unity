@@ -3311,7 +3311,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f9be86df59ab3664a88d38c4c6c49812, type: 3}
   - {fileID: 8300000, guid: 4f0ac33db28bd5b4281afca96363ebea, type: 3}
   - {fileID: 8300000, guid: ff3922fbfb190364096a916717d84583, type: 3}
-  shortNoteWindow: 0.2
+  shortNoteWindow: 0.125
   TrueCode: 0100000101
   confirmation:
   - {fileID: 8300000, guid: 76e4970cd0524ac4790bc65ddf01a86b, type: 3}
