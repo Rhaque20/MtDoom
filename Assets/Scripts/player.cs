@@ -147,8 +147,6 @@ public class player : MonoBehaviour
                             audiosource.clip = pickupSound;
                             audiosource.Play();
                         }
-                        audiosource.clip = paperPlace;
-
                         if(grabbedItem != null)
                         {
                             if(interactable.tag == "Paper")
