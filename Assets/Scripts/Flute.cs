@@ -7,9 +7,17 @@ public class Flute : Interactable
     AudioSource audioSource;
     [SerializeField]
     AudioClip[] clips;
+    float holdTime = 0f;
+    [SerializeField]float shortNoteWindow = 0.3f;
     private void Awake()
     {
         audioSource = this.GetComponent<AudioSource>();
+    }
+
+    public override void HeldInteraction()
+    {
+        print("Playing the flute!");
+        holdTime += Time.deltaTime;
     }
 
     public override void Interaction()
@@ -28,7 +36,12 @@ public class Flute : Interactable
         //{
         //    audioSource.time = audioSource.clip.length * .5f;
         //}
-        
+        if (holdTime <= shortNoteWindow)
+            print("Short note!");
+        else
+            print("Long note!");
+        holdTime = 0f;
+        //print("Release!");
         audioSource.Stop();
     }
     public override void grab(Transform holdPos)

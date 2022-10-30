@@ -57,7 +57,7 @@ public class Interactable : MonoBehaviour
     }
     public virtual void HeldInteraction()
     {
-        print("interacted");
+        print("interacted but holding");
 
     }
     //this allows you to grab the item
