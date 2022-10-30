@@ -5,12 +5,12 @@ using UnityEngine;
 public class Bell : Interactable
 {
     AudioSource audioSource;
-    DemonEvent de;
+    BellsEvent be;
     
     private void Awake()
     {
         audioSource = this.GetComponent<AudioSource>(); 
-        de = gameObject.GetComponentInParent<DemonEvent>();       
+        be = gameObject.GetComponentInParent<BellsEvent>();       
     }
 
     public override void Interaction()
@@ -18,6 +18,6 @@ public class Bell : Interactable
         base.Interaction();
         print("bell is working" +this.name);
         audioSource.Play();
-        de.code.Add(this.gameObject);
+        be.code.Add(this.gameObject);
     }
 }

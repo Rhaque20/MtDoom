@@ -6,8 +6,6 @@ public class DemonEvent : MonoBehaviour
 {
     Collider col;
     [SerializeField]int eventID = 0;
-    [SerializeField]public List<GameObject> code = new List<GameObject>();
-    [SerializeField]GameObject []trueCode = new GameObject[3];
 
     public void OnTriggerEnter(Collider player)
     {
@@ -27,32 +25,6 @@ public class DemonEvent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (eventID == 1)
-        {
-            if (code.Count >= 3)
-            {
-                bool correct = true;
-                //print("Bell Code: "+code[0].name+" "+code[1].name+" "+code[2].name);
-                for (int i = 0; i < 3; i++)
-                {
-                    if (code[i] != trueCode[i])
-                    {
-                        correct = false;
-                        break;
-                    }
-                }
 
-                if(correct)
-                {
-                    if (GameManager.Instance.demon == eventID)
-                        GameManager.Instance.CounterEvent();
-                }
-                else
-                {
-                    print("Incorrect!");
-                }
-                code.Clear();
-            }
-        }
     }
 }
