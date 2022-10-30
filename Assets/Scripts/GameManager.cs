@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     //struct sector
@@ -74,10 +74,15 @@ public class GameManager : MonoBehaviour
                 JumpScare();
                 demonDistance = null;
                 p.enabled = false;
+                Invoke("LoseScene",1);
                 //demonJumpscare.transform.rotation = new Quaternion(demonJumpscare.transform.rotation.x, targetRotation.y, demonJumpscare.transform.rotation.z, demonJumpscare.transform.rotation.w);
                 break;
 
         }
+    }
+    void LoseScene()
+    {
+        SceneManager.LoadScene("Lose screen");
     }
 
     void JumpScare()
