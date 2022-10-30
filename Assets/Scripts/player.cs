@@ -30,9 +30,6 @@ public class player : MonoBehaviour
     {
         cam = Camera.main;
         controller = this.GetComponent<CharacterController>();
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-       
     }
 
     // Start is called before the first frame update

@@ -11,6 +11,7 @@ public class Flute : Interactable
     [SerializeField]float shortNoteWindow = 0.3f;
     [SerializeField]bool []TrueCode = new bool[5];// True = Short, False = Long
     List<bool> insertCode = new List<bool>();
+    [SerializeField]AudioClip []confirmation = new AudioClip[2];
 
     private void Awake()
     {
@@ -60,9 +61,14 @@ public class Flute : Interactable
             }
             insertCode.Clear();
             if (correct && GameManager.Instance.demon == 2)
+            {
                 GameManager.Instance.CounterEvent();
+                audioSource.PlayOneShot(confirmation[1]);
+            }
             else
-                print("Incorrect Tune!");
+            {
+                audioSource.PlayOneShot(confirmation[0]);
+            }
         }
     }
     public override void grab(Transform holdPos)
