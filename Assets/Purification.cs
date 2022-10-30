@@ -20,7 +20,19 @@ public class Purification : MonoBehaviour
     {
         if (player.gameObject.CompareTag("Player"))
         {
-            print("PURIFYING!");
+            player p = player.gameObject.GetComponent<player>();
+            if (p.item != null && p.item.interactionCode == 2)
+            {
+                print("PURIFYING!");
+                progress += Time.deltaTime;
+                if (progress >= 100f)
+                {
+                    progress = 100f;
+                    GameManager.Instance.PurificationComplete();
+                }
+                progressDisplay.GetComponent<TMP_Text>().text = Mathf.Floor(progress).ToString()+"%";
+            }
+            
         }
     }
 
