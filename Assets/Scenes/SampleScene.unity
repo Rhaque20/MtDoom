@@ -2299,10 +2299,12 @@ MonoBehaviour:
   LongInteraction: 0
   InteractionCode: 0
   clips:
-  - {fileID: 8300000, guid: 8032aafc08a13ff4b8ecd99dc9a63c73, type: 3}
-  - {fileID: 8300000, guid: 7e6a3e0b749e92944b482cb4cddabce5, type: 3}
-  - {fileID: 8300000, guid: 6fb5abbe028b7c04aba3c49275b1ba27, type: 3}
-  - {fileID: 8300000, guid: a0390012fe4f5554e9a3d1f3b2fa8080, type: 3}
+  - {fileID: 8300000, guid: 7c54d2d7084be774da2da4b44b17e704, type: 3}
+  - {fileID: 8300000, guid: 4f033f8c989957e4bbf1351e1b93b977, type: 3}
+  - {fileID: 8300000, guid: 7c54d2d7084be774da2da4b44b17e704, type: 3}
+  - {fileID: 8300000, guid: f9be86df59ab3664a88d38c4c6c49812, type: 3}
+  - {fileID: 8300000, guid: 4f0ac33db28bd5b4281afca96363ebea, type: 3}
+  - {fileID: 8300000, guid: ff3922fbfb190364096a916717d84583, type: 3}
 --- !u!64 &1667689277
 MeshCollider:
   m_ObjectHideFlags: 0
