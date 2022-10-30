@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DemonEvent : MonoBehaviour
+public class BushEvent : MonoBehaviour
 {
     Collider col;
 
