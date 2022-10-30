@@ -1954,9 +1954,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameStart: 0
+  victory: 0
   ritualGoal: 0
   reactionTime: 0
-  timer: 360
+  timer: 180
   timerText: {fileID: 1704500117}
   d: {fileID: 1160875245}
   demonSignals: []
