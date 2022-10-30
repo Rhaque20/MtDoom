@@ -2531,6 +2531,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f9be86df59ab3664a88d38c4c6c49812, type: 3}
   - {fileID: 8300000, guid: 4f0ac33db28bd5b4281afca96363ebea, type: 3}
   - {fileID: 8300000, guid: ff3922fbfb190364096a916717d84583, type: 3}
+  shortNoteWindow: 0.2
+  TrueCode: 0101000001
 --- !u!64 &1667689277
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2902,6 +2904,8 @@ MonoBehaviour:
   LongInteraction: 0
   InteractionCode: 5
   clips: []
+  shortNoteWindow: 0.3
+  TrueCode: 000000
 --- !u!65 &1828672564
 BoxCollider:
   m_ObjectHideFlags: 0

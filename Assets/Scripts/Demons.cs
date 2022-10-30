@@ -21,7 +21,7 @@ public class Demons : MonoBehaviour
 
     public int CallDemon()// Return randomly called demon
     {
-        demon = Random.Range(1,2);
+        demon = Random.Range(1,3);
         return demon;
     }
 

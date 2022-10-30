@@ -54,17 +54,19 @@ public class GameManager : MonoBehaviour
                 if (demon == 0)
                     print("A strong demonic energy is approaching!");
                 if (demon == 1)
-                    print("A demonic wind is approaching, ring the bells!");
+                    print("A demonic flame is approaching, ring the bells!");
+                if (demon == 2)
+                    print("A demon wind is approaching, play the flute!");
                 onAttack = true;
                 demonDistance = StartCoroutine(Timers(1,10f * d.dmod));
                 break;
             case 1:
                 // Trigger gameover here
                 print("GAME OVER!");
-                demonDistance = null;
                 onAttack = false;
                 demon = -1;
                 JumpScare();
+                demonDistance = null;
                 //demonJumpscare.transform.rotation = new Quaternion(demonJumpscare.transform.rotation.x, targetRotation.y, demonJumpscare.transform.rotation.z, demonJumpscare.transform.rotation.w);
                 break;
 
