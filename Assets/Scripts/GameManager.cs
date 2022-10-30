@@ -73,8 +73,7 @@ public class GameManager : MonoBehaviour
                 demon = -1;
                 JumpScare();
                 demonDistance = null;
-                p.enabled = false;
-                Invoke("LoseScene",1);
+                
                 //demonJumpscare.transform.rotation = new Quaternion(demonJumpscare.transform.rotation.x, targetRotation.y, demonJumpscare.transform.rotation.z, demonJumpscare.transform.rotation.w);
                 break;
 
@@ -83,6 +82,10 @@ public class GameManager : MonoBehaviour
     void LoseScene()
     {
         SceneManager.LoadScene("Lose screen");
+    }
+    void winScene()
+    {
+        SceneManager.LoadScene("Win screen");
     }
 
     void JumpScare()
@@ -100,6 +103,8 @@ public class GameManager : MonoBehaviour
         Quaternion targetRotation= Quaternion.LookRotation(direction, Vector3.up);
         demonJumpscare.transform.localEulerAngles = new Vector3(demonJumpscare.transform.localEulerAngles.x, targetRotation.eulerAngles.y, demonJumpscare.transform.localEulerAngles.z);
         Camera.main.transform.LookAt(demonJumpscare.transform.position);
+        p.enabled = false;
+        Invoke("LoseScene", 1);
     }
 
     public void PurificationComplete()
