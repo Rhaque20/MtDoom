@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 
 
     bool onAttack = false;
+    public bool gameStart = false;
     public static GameManager Instance;
     [SerializeField]
     int ritualGoal;
@@ -126,25 +127,28 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //timer system
-        timer -= Time.deltaTime;
-       // print(timer);
-        string minutes = Mathf.Floor(timer / 60).ToString("00");
-        string seconds = (timer % 60).ToString("00");
-        timerText.text = minutes + ":" + seconds;
+        if (gameStart)
+        {
+            //timer system
+            timer -= Time.deltaTime;
+        // print(timer);
+            string minutes = Mathf.Floor(timer / 60).ToString("00");
+            string seconds = (timer % 60).ToString("00");
+            timerText.text = minutes + ":" + seconds;
 
-        if (timer <= 0)
-        {
-            print("game should end");
-        }
-        if (fluteCounter > 0)
-        {
-            fluteCounter -= Time.deltaTime;
-        }
+            if (timer <= 0)
+            {
+                print("game should end");
+            }
+            if (fluteCounter > 0)
+            {
+                fluteCounter -= Time.deltaTime;
+            }
 
-        if (demonDistance == null)// Check if no cooldown is active.
-        {
-            demonDistance = StartCoroutine(Timers(0,10f));
+            if (demonDistance == null)// Check if no cooldown is active.
+            {
+                demonDistance = StartCoroutine(Timers(0,10f));
+            }
         }
 
     }

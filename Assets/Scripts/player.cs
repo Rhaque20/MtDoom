@@ -45,6 +45,8 @@ public class player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.Instance.gameStart)
+        {
         //movement system
         Vector3 moveVector = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
         moveVector = this.transform.TransformDirection(moveVector);
@@ -223,7 +225,7 @@ public class player : MonoBehaviour
             }
         }
         //drops/returns the object
-       
+        }
 
     }
 }
