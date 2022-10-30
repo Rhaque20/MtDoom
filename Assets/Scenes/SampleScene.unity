@@ -1576,7 +1576,8 @@ MonoBehaviour:
   footsteps: {fileID: 8300000, guid: da178287694a7fd42ab8491e573a62c2, type: 3}
   pickupSound: {fileID: 8300000, guid: 98caa61b7ed881c4bbe619d567932998, type: 3}
   placeSound: {fileID: 8300000, guid: 6ba51390b178afb43bb3efdc49bf5659, type: 3}
-  paperSound: {fileID: 8300000, guid: d3662faf1ff04ff4b91e67b9f4134ee3, type: 3}
+  paperPickup: {fileID: 0}
+  paperPlace: {fileID: 0}
 --- !u!4 &953932904
 Transform:
   m_ObjectHideFlags: 0
@@ -4427,6 +4428,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233053402612162645, guid: e852e46e6e35b84418157fd6e8a90839,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.01922512
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233053402612162645, guid: e852e46e6e35b84418157fd6e8a90839,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233053402612162645, guid: e852e46e6e35b84418157fd6e8a90839,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233053403490279233, guid: e852e46e6e35b84418157fd6e8a90839,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233053403490279233, guid: e852e46e6e35b84418157fd6e8a90839,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.037675556
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233053403490279233, guid: e852e46e6e35b84418157fd6e8a90839,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5233053403490279246, guid: e852e46e6e35b84418157fd6e8a90839,
         type: 3}
