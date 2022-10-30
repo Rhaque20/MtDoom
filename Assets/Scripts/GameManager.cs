@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     Coroutine demonDistance;
     [SerializeField]Demons d;
     [SerializeField]GameObject [] demonSignals;
+    public int demon = -1;
 
 
     private IEnumerator Timers(int stage,float countdown)// Will run a two stage timer
@@ -37,13 +38,16 @@ public class GameManager : MonoBehaviour
         {
             // This is the cooldown for demon attack.
             case 0:
-                int demon;
+                
                 demon = d.CallDemon();// Will check which demon to use and activate specific object
                 /**
                     run if/switch statement of triggering an object event
                 **/
                 // Start the reaction timer, will use timer modifier from from demon script
-                print("A strong demonic energy is approaching!");
+                if (demon == 0)
+                    print("A strong demonic energy is approaching!");
+                if (demon == 1)
+                    print("A demonic wind is approaching, ring the bells!");
                 onAttack = true;
                 demonDistance = StartCoroutine(Timers(1,10f * d.dmod));
                 break;
@@ -52,6 +56,7 @@ public class GameManager : MonoBehaviour
                 print("GAME OVER!");
                 demonDistance = null;
                 onAttack = false;
+                demon = -1;
                 break;
 
         }
@@ -65,6 +70,7 @@ public class GameManager : MonoBehaviour
             StopCoroutine(demonDistance);
             demonDistance = null;
             onAttack = false;
+            demon = -1;
         }
     }
 
