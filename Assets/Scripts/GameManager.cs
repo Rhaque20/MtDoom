@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]Demons d;
     [SerializeField]GameObject [] demonSignals;
     public int demon = -1;
+    [SerializeField]AudioSource AudioJungle;
+    [SerializeField]AudioClip []ac = new AudioClip[3];
 
 
     private IEnumerator Timers(int stage,float countdown)// Will run a two stage timer
@@ -41,9 +43,10 @@ public class GameManager : MonoBehaviour
                 
                 demon = d.CallDemon();// Will check which demon to use and activate specific object
                 /**
-                    run if/switch statement of triggering an object event
+                    play soundeffect of specified index
                 **/
                 // Start the reaction timer, will use timer modifier from from demon script
+                AudioJungle.PlayOneShot(ac[demon]);
                 if (demon == 0)
                     print("A strong demonic energy is approaching!");
                 if (demon == 1)
@@ -90,7 +93,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        AudioJungle = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
