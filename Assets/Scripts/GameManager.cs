@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
         RaycastHit hit;
 
         //demonJumpscare.transform.position = p.transform.position - demonJumpscare.transform.position;
-        AudioJungle.PlayOneShot(ac[4]);
+        AudioJungle.PlayOneShot(ac[3]);
         demonJumpscare.transform.position = p.transform.position + p.transform.forward;
         if (Physics.Raycast(demonJumpscare.transform.position, Vector3.down, out hit, 1.5f, floorLayer))
         {
