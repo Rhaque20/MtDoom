@@ -20,7 +20,8 @@ public class player : MonoBehaviour
     public AudioClip footsteps;
     public AudioClip pickupSound;
     public AudioClip placeSound;
-    public AudioClip paperSound;
+    public AudioClip paperPickup;
+    public AudioClip paperPlace;
     bool isWalking = false;
     public Interactable item
     {
@@ -137,21 +138,24 @@ public class player : MonoBehaviour
                     {
                         if (interactable.tag == "Paper")
                         {
-                            audiosource.clip = paperSound;
+                            audiosource.clip = paperPickup;
                             audiosource.Play();
+                            
                         }
                         else
                         {
                             audiosource.clip = pickupSound;
                             audiosource.Play();
                         }
+                        audiosource.clip = paperPlace;
 
                         if(grabbedItem != null)
                         {
                             if(interactable.tag == "Paper")
                             {
-                                audiosource.clip = paperSound;
+                                audiosource.clip = paperPickup;
                                 audiosource.Play();
+                                //audiosource.clip = paperPlace;
                             }
                             else
                             {
@@ -200,11 +204,9 @@ public class player : MonoBehaviour
             crosshair.color = Color.white;
             if (Input.GetKeyDown(KeyCode.E) && grabbedItem != null)
             {
-
-                audiosource.clip = placeSound;
-                audiosource.Play();
                 grabbedItem.returnObject();
                 grabbedItem = null;
+                audiosource.Play();
             }
         }
         if (grabbedItem != null)
