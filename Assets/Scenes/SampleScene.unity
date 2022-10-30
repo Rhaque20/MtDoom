@@ -2763,6 +2763,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1561111155 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4926625223780820128, guid: e852e46e6e35b84418157fd6e8a90839,
+    type: 3}
+  m_PrefabInstance: {fileID: 5233053403984404488}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1561111156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561111155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f594da8b25748fb4ba4bfe0d99103ba8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audiosource: {fileID: 1561111157}
+  candleSound: {fileID: 8300000, guid: 09b000015ae5a2e43ad710125787be32, type: 3}
+--- !u!82 &1561111157 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1779872756, guid: e852e46e6e35b84418157fd6e8a90839,
+    type: 3}
+  m_PrefabInstance: {fileID: 5233053403984404488}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1612539276 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ab5537e87b02d5641bb1cb28ce3c006f,
@@ -4414,6 +4440,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1779872756, guid: e852e46e6e35b84418157fd6e8a90839, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779872756, guid: e852e46e6e35b84418157fd6e8a90839, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4926625223780820128, guid: e852e46e6e35b84418157fd6e8a90839,
         type: 3}
       propertyPath: m_Name
