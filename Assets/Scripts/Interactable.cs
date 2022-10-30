@@ -50,6 +50,11 @@ public class Interactable : MonoBehaviour
        
 
     }
+
+    public virtual void releasedInteraction()
+    {
+
+    }
     public virtual void HeldInteraction()
     {
         print("interacted");
