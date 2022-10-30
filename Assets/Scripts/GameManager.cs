@@ -74,7 +74,8 @@ public class GameManager : MonoBehaviour
 
                 Vector3 direction = p.transform.position - demonJumpscare.transform.position;
                 Quaternion targetRotation= Quaternion.LookRotation(direction, Vector3.up);
-                demonJumpscare.transform.rotation = new Quaternion(demonJumpscare.transform.rotation.x, targetRotation.y, demonJumpscare.transform.rotation.z, demonJumpscare.transform.rotation.w);
+                demonJumpscare.transform.localEulerAngles = new Vector3(demonJumpscare.transform.localEulerAngles.x, targetRotation.eulerAngles.y, demonJumpscare.transform.localEulerAngles.z);
+                //demonJumpscare.transform.rotation = new Quaternion(demonJumpscare.transform.rotation.x, targetRotation.y, demonJumpscare.transform.rotation.z, demonJumpscare.transform.rotation.w);
                 break;
 
         }
