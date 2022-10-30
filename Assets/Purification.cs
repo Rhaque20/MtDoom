@@ -24,7 +24,7 @@ public class Purification : MonoBehaviour
             if (p.item != null && p.item.interactionCode == 2)
             {
                 print("PURIFYING!");
-                progress += Time.deltaTime;
+                progress += 3*Time.deltaTime;
                 if (progress >= 100f)
                 {
                     progress = 100f;
