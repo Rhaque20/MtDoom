@@ -134,7 +134,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameStart)
+        if (gameStart && !victory)
         {
             //timer system
             timer -= Time.deltaTime;
@@ -153,6 +153,7 @@ public class GameManager : MonoBehaviour
                 }
                 else
                     victory = true;
+                CounterEvent();
                 print("game should end");
             }
             if (fluteCounter > 0)
