@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
                     play soundeffect of specified index
                 **/
                 // Start the reaction timer, will use timer modifier from from demon script
+                //AudioJungle.PlayOneShot(ac[3]);
                 AudioJungle.PlayOneShot(ac[demon]);
                 if (demon == 0)
                     print("A strong demonic energy is approaching!");
@@ -63,23 +64,28 @@ public class GameManager : MonoBehaviour
                 demonDistance = null;
                 onAttack = false;
                 demon = -1;
-                RaycastHit hit;
-
-                //demonJumpscare.transform.position = p.transform.position - demonJumpscare.transform.position;
-               
-                demonJumpscare.transform.position = p.transform.position + p.transform.forward;
-                if (Physics.Raycast(demonJumpscare.transform.position, Vector3.down, out hit, 1.5f, floorLayer))
-                {
-                    demonJumpscare.transform.position = hit.point + Vector3.up * 1.398f;
-                }
-                Vector3 direction = p.transform.position - demonJumpscare.transform.position;
-                Quaternion targetRotation= Quaternion.LookRotation(direction, Vector3.up);
-                demonJumpscare.transform.localEulerAngles = new Vector3(demonJumpscare.transform.localEulerAngles.x, targetRotation.eulerAngles.y, demonJumpscare.transform.localEulerAngles.z);
-                Camera.main.transform.LookAt(demonJumpscare.transform.position);
+                JumpScare();
                 //demonJumpscare.transform.rotation = new Quaternion(demonJumpscare.transform.rotation.x, targetRotation.y, demonJumpscare.transform.rotation.z, demonJumpscare.transform.rotation.w);
                 break;
 
         }
+    }
+
+    void JumpScare()
+    {
+        RaycastHit hit;
+
+        //demonJumpscare.transform.position = p.transform.position - demonJumpscare.transform.position;
+        AudioJungle.PlayOneShot(ac[4]);
+        demonJumpscare.transform.position = p.transform.position + p.transform.forward;
+        if (Physics.Raycast(demonJumpscare.transform.position, Vector3.down, out hit, 1.5f, floorLayer))
+        {
+            demonJumpscare.transform.position = hit.point + Vector3.up * 1.398f;
+        }
+        Vector3 direction = p.transform.position - demonJumpscare.transform.position;
+        Quaternion targetRotation= Quaternion.LookRotation(direction, Vector3.up);
+        demonJumpscare.transform.localEulerAngles = new Vector3(demonJumpscare.transform.localEulerAngles.x, targetRotation.eulerAngles.y, demonJumpscare.transform.localEulerAngles.z);
+        Camera.main.transform.LookAt(demonJumpscare.transform.position);
     }
 
     public void CounterEvent()
