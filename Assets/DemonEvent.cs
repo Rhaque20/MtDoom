@@ -5,14 +5,13 @@ using UnityEngine;
 public class DemonEvent : MonoBehaviour
 {
     Collider col;
-    [SerializeField]int eventID = 0;
 
     public void OnTriggerEnter(Collider player)
     {
         if (player.gameObject.CompareTag("Player"))
         {
             player p = player.gameObject.GetComponent<player>();
-            if (p.item.interactionCode == eventID)
+            if (p.item.interactionCode == 0 && GameManager.Instance.demon == 0)
                 GameManager.Instance.CounterEvent();
         }
     }
