@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
     public int demon = -1;
     [SerializeField]AudioSource AudioJungle;
     [SerializeField]AudioClip []ac = new AudioClip[3];
+    GameObject demonJumpscare;
+    player p;
 
 
     private IEnumerator Timers(int stage,float countdown)// Will run a two stage timer
@@ -60,6 +62,9 @@ public class GameManager : MonoBehaviour
                 demonDistance = null;
                 onAttack = false;
                 demon = -1;
+                //demonJumpscare.transform.position = p.transform.position - demonJumpscare.transform.position;
+                demonJumpscare.transform.position = Camera.main.transform.position + Camera.main.transform.forward;
+                demonJumpscare.transform.rotation = Quaternion.LookRotation(p.transform.position - demonJumpscare.transform.position , Vector3.up);
                 break;
 
         }
@@ -94,6 +99,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         AudioJungle = GetComponent<AudioSource>();
+        p = GameObject.Find("Player").GetComponent<player>();
+        demonJumpscare = GameObject.Find("DemonPoly");
     }
 
     // Update is called once per frame
