@@ -19,6 +19,11 @@ public class Flute : Interactable
         
         audioSource.PlayOneShot(clips[(int)Random.Range(0,clips.Length)]);
     }
+    public override void releasedInteraction()
+    {
+        base.releasedInteraction();
+        audioSource.Stop();
+    }
     public override void grab(Transform holdPos)
     {
         base.grab(holdPos);
