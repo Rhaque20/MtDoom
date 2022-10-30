@@ -30,18 +30,19 @@ public class BellsEvent : MonoBehaviour
                 }
             }
 
-            if(correct)
+            if (GameManager.Instance.demon == 1)
             {
-                if (GameManager.Instance.demon == 1)
+                if(correct)
                 {
-                    AudioPlayer.PlayOneShot(ac[1]);
-                    GameManager.Instance.CounterEvent();
+                    
+                        AudioPlayer.PlayOneShot(ac[1]);
+                        GameManager.Instance.CounterEvent();
+                    
                 }
-            }
-            else
-            {
-                AudioPlayer.PlayOneShot(ac[0]);
-                //print("Incorrect!");
+                else
+                {
+                    AudioPlayer.PlayOneShot(ac[0]);
+                }
             }
             code.Clear();
         }
