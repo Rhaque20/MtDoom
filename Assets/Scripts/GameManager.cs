@@ -56,8 +56,11 @@ public class GameManager : MonoBehaviour
                 AudioJungle.PlayOneShot(ac[demon]);
                 if (demon == 0)
                     print("A strong demonic energy is approaching!");
-                if (demon == 1)
+                else if (demon == 1)
+                {
                     print("A demonic flame is approaching, ring the bells!");
+                    demonSignals[0].SetActive(true);
+                }else
                 if (demon == 2)
                     print("A demon wind is approaching, play the flute!");
                 onAttack = true;
@@ -103,6 +106,7 @@ public class GameManager : MonoBehaviour
         if (onAttack)// If an attack event is in progress cancel it
         {
             print("The demon has disappeared....for now...");
+            demonSignals[0].SetActive(false);
             StopCoroutine(demonDistance);
             demonDistance = null;
             onAttack = false;

@@ -1131,6 +1131,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SmokeEffect
       objectReference: {fileID: 0}
+    - target: {fileID: 7114943835862982320, guid: c198643a31291a840a6f8bfdc99692ee,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7114943835862982323, guid: c198643a31291a840a6f8bfdc99692ee,
         type: 3}
       propertyPath: m_RootOrder
@@ -1655,6 +1660,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &829289192 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7114943835862982320, guid: c198643a31291a840a6f8bfdc99692ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 512265727}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -2149,7 +2160,8 @@ MonoBehaviour:
   timer: 180
   timerText: {fileID: 1704500117}
   d: {fileID: 1160875245}
-  demonSignals: []
+  demonSignals:
+  - {fileID: 829289192}
   demon: -1
   AudioJungle: {fileID: 0}
   ac:
@@ -2685,7 +2697,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1342345037}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.56, y: 50.55, z: 9}
+  m_LocalPosition: {x: 18.56, y: 48, z: 9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
