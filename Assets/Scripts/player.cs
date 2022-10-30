@@ -39,8 +39,9 @@ public class player : MonoBehaviour
     void Start()
     {
         audiosource = GetComponent<AudioSource>();
+        
     }
-
+    
     // Update is called once per frame
     void Update()
     {

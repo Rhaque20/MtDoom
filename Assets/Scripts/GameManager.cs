@@ -32,7 +32,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]AudioClip []ac = new AudioClip[3];
     GameObject demonJumpscare;
     player p;
-
+    [SerializeField]
+    LayerMask floorLayer;
 
     private IEnumerator Timers(int stage,float countdown)// Will run a two stage timer
     {
@@ -62,9 +63,18 @@ public class GameManager : MonoBehaviour
                 demonDistance = null;
                 onAttack = false;
                 demon = -1;
+                RaycastHit hit;
+
                 //demonJumpscare.transform.position = p.transform.position - demonJumpscare.transform.position;
+                if (Physics.Raycast(demonJumpscare.transform.position, Vector3.down,out hit ,1.5f,floorLayer))
+                {
+                    demonJumpscare.transform.position = hit.point+ Vector3.up*1.398f;
+                }
                 demonJumpscare.transform.position = Camera.main.transform.position + Camera.main.transform.forward;
-                demonJumpscare.transform.rotation = Quaternion.LookRotation(p.transform.position - demonJumpscare.transform.position , Vector3.up);
+
+                Vector3 direction = p.transform.position - demonJumpscare.transform.position;
+                Quaternion targetRotation= Quaternion.LookRotation(direction, Vector3.up);
+                demonJumpscare.transform.rotation = new Quaternion(demonJumpscare.transform.rotation.x, targetRotation.y, demonJumpscare.transform.rotation.z, demonJumpscare.transform.rotation.w);
                 break;
 
         }
