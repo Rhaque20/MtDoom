@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
 
 
     bool onAttack = false;
-    public bool gameStart = false;
+    public bool gameStart = false, victory = false;
     public static GameManager Instance;
     [SerializeField]
     int ritualGoal;
@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     int ritualProgress;// Current bar progress
     //float demonDistance = 10f;// Grace period until next demon attack
     [SerializeField]
-    float timer=360;// Time until day ends
+    float timer=180f;// Time until day ends
     [SerializeField]
     TextMeshProUGUI timerText;
     Coroutine demonDistance;
@@ -35,6 +35,8 @@ public class GameManager : MonoBehaviour
     player p;
     [SerializeField]
     LayerMask floorLayer;
+
+    bool []isWin = new bool[2];
 
     private IEnumerator Timers(int stage,float countdown)// Will run a two stage timer
     {
@@ -91,6 +93,11 @@ public class GameManager : MonoBehaviour
         Camera.main.transform.LookAt(demonJumpscare.transform.position);
     }
 
+    public void PurificationComplete()
+    {
+        isWin[1] = true;
+    }
+
     public void CounterEvent()
     {
         if (onAttack)// If an attack event is in progress cancel it
@@ -138,6 +145,14 @@ public class GameManager : MonoBehaviour
 
             if (timer <= 0)
             {
+                isWin[0] = true;
+                if (!isWin[1])
+                {
+                    victory = false;
+                    JumpScare();
+                }
+                else
+                    victory = true;
                 print("game should end");
             }
             if (fluteCounter > 0)
@@ -145,7 +160,7 @@ public class GameManager : MonoBehaviour
                 fluteCounter -= Time.deltaTime;
             }
 
-            if (demonDistance == null)// Check if no cooldown is active.
+            if (demonDistance == null && !victory)// Check if no cooldown is active.
             {
                 demonDistance = StartCoroutine(Timers(0,10f));
             }
