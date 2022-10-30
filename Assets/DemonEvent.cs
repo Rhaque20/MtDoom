@@ -44,10 +44,13 @@ public class DemonEvent : MonoBehaviour
 
                 if(correct)
                 {
-                    print("Correct code!");
+                    if (GameManager.Instance.demon == eventID)
+                        GameManager.Instance.CounterEvent();
                 }
                 else
+                {
                     print("Incorrect!");
+                }
                 code.Clear();
             }
         }
